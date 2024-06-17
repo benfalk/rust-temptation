@@ -1,0 +1,3 @@
+[book]
+title = "{{project-name}} Documentation"
+src = "."
