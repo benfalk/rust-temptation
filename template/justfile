@@ -17,6 +17,10 @@ fmt *FLAGS:
 test *FLAGS:
   cargo nextest run --all-features --workspace {% raw %}{{FLAGS}}{% endraw %}
 
+# Benchmark codebase with criterion.
+benchmark *FLAGS:
+  cargo criterion {% raw %}{{FLAGS}}{% endraw %}
+
 # generate documentation
 doc:
   mdbook build
@@ -34,3 +38,14 @@ init:
 
   echo # requirements for `just doc`
   cargo binstall mdbook --no-confirm
+  cargo binstall mdbook-admonish --no-confirm
+  cargo binstall mdbook-mermaid --no-confirm
+
+  echo # requirements for `just benchmark`
+  cargo binstall cargo-criterion --no-confirm
+
+  echo # requirements for `just thorough-check`
+  cargo binstall cargo-udeps --no-confirm
+  cargo binstall cargo-audit --no-confirm
+  cargo binstall cargo-upgrades --no-confirm
+  cargo binstall cargo-unused-features --no-confirm

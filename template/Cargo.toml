@@ -9,5 +9,9 @@ edition = "2021"
 [dependencies]
 
 [dev-dependencies]
-criterion = "0.5"
+criterion = { version = "0.5", features = ["html_reports"] }
 pretty_assertions = "1.4"
+
+[[bench]]
+name = "benches"
+harness = false

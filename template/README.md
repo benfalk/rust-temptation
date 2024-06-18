@@ -22,8 +22,8 @@
 2. **Install `cargo-binstall`**
 
    Most of the workflows in this project lean heavily upon cargo binary
-   packages. While we could simply `cargo install <packag>`, this allows
-   for you to install a pre-compiled binary for your system and avoids
+   packages. While we could simply `cargo install <package>`, this allows
+   you to install a pre-compiled binary for your environment and avoids
    a possible lengthy compile time.
 
    - For `OSX` and `Linux`:
